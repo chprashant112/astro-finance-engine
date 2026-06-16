@@ -94,7 +94,7 @@ def append_planet_data(df, planets_to_calc):
         for dt in data.index:
             hour_fraction = dt.hour + (dt.minute / 60.0)
             jd = swe.julday(dt.year, dt.month, dt.day, hour_fraction)
-            pos, _ = swe.calc_ut(jd, planet_id)
+            pos, _, _ = swe.calc_ut(float(jd), int(planet_id))
             deg = pos[0]
             
             degrees.append(deg)
